@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Garage — Compare Saved Cars · APEX/DROP</title>
+<meta name="description" content="Compare specs side by side for the cars you've saved.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+
+  <!-- Google Analytics 4 (replace G-XXXXXXXXXX with this project's measurement ID) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+    /* Custom GA4 events fired from js/main.js:
+         add_to_garage      – visitor saves a car to My Garage
+         remove_from_garage – visitor removes a saved car
+         filter_drops       – visitor filters the Drops grid by category
+         sort_drops         – visitor changes the Drops sort order
+         newsletter_signup  – visitor submits the Drop Alerts form   */
+  </script>
+  <!-- Optional: Microsoft Clarity can be added here for click/scroll heatmaps -->
+</head>
+<body>
+  <div class="disclaimer-bar">
+    Student course project (MSE543) — this site simulates an automotive news outlet and tracks demo analytics (page views, clicks, session data) for research purposes only. <a href="about.html">Learn more</a>
+  </div>
+  <header class="site-header">
+    <div class="wrap nav">
+      <a href="index.html" class="brand">APEX<span class="slash">/</span>DROP<span class="sub">Drop Tracker</span></a>
+      <button class="menu-toggle" aria-label="Toggle menu">MENU</button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav">Home</a></li>
+        <li><a href="drops.html" class="nav">Drops</a></li>
+        <li><a href="news.html" class="nav">News</a></li>
+        <li><a href="garage.html" class="nav active">My Garage <span data-garage-count style="font-size:10px;color:var(--marigold);"></span></a></li>
+        <li><a href="about.html" class="nav">About</a></li>
+        <li><a href="drops.html" class="nav-cta">Latest Drops</a></li>
+      </ul>
+    </div>
+  </header>
+<main>
+  <div class="wrap page-head">
+    <span class="eyebrow">Saved</span>
+    <h1>My Garage</h1>
+    <p class="lede" style="max-width:60ch;">Cars you've saved from the Drops page, compared spec-for-spec. Saved locally in this browser — add a few cars to see it in action.</p>
+  </div>
+  <div class="wrap" data-garage-root></div>
+</main>
+<script>window.APEXDROP_CATALOG = [{"id": "audi-nuvolari", "name": "Audi Nuvolari", "category": "Hypercar", "powertrain": "Twin-turbo V8 + three-motor hybrid assist", "power": "3,000+ hp combined (mfr. claim)", "zeroSixty": "0–62 mph in 2.6s", "topSpeed": "217+ mph (350+ km/h)", "priceLabel": "TBA — limited run", "availability": "Prototype shown June 2026 · production targeted 2027"}, {"id": "bugatti-tourbillon", "name": "Bugatti Tourbillon", "category": "Hypercar", "powertrain": "8.3L naturally aspirated V16 + three-motor hybrid", "power": "1,775 hp", "zeroSixty": "0–60 mph in 2.0s", "topSpeed": "~277 mph (target)", "priceLabel": "$4.6M+ starting", "availability": "First customer deliveries expected late 2026"}, {"id": "ferrari-849-testarossa", "name": "Ferrari 849 Testarossa", "category": "Hypercar", "powertrain": "Twin-turbo V8 + tri-motor hybrid, all-wheel drive", "power": "~1,035 hp (est.)", "zeroSixty": "0–62 mph in ~2.3s (est.)", "topSpeed": "~211 mph (est.)", "priceLabel": "$600K+ (est.)", "availability": "Full reveal expected second half of 2026"}, {"id": "aston-martin-valhalla", "name": "Aston Martin Valhalla", "category": "Hypercar", "powertrain": "Twin-turbo V8 + three electric motors", "power": "1,064 hp", "zeroSixty": "sub-2.5s 0–60 mph", "topSpeed": "217 mph", "priceLabel": "~$800K (est.)", "availability": "Customer deliveries begin 2026"}, {"id": "lamborghini-temerario", "name": "Lamborghini Temerario", "category": "Sports", "powertrain": "Twin-turbo V8 + hybrid assist", "power": "907 hp", "zeroSixty": "0–62 mph in 2.7s", "topSpeed": "213 mph", "priceLabel": "From $347,000", "availability": "In production, deliveries ongoing"}, {"id": "range-rover-ev", "name": "Range Rover EV", "category": "Luxury EV", "powertrain": "Dual electric motor, all-wheel drive", "power": "~590 hp (est.)", "zeroSixty": "0–60 mph in 4.6s (est.)", "topSpeed": "130 mph (limited)", "priceLabel": "From ~$140,000 (est.)", "availability": "Arrives late 2026"}, {"id": "amg-cle63", "name": "Mercedes-AMG CLE 63", "category": "Grand Tourer", "powertrain": "Twin-turbo V8", "power": "~671 hp (est.)", "zeroSixty": "0–60 mph in ~3.3s (est.)", "topSpeed": "180 mph (est.)", "priceLabel": "~$110,000 (est.)", "availability": "Orders open now"}];</script>
+  <footer class="site-footer">
+    <div class="wrap">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>Drops</h4>
+          <a href="drops.html?filter=hypercar">Hypercars</a>
+          <a href="drops.html?filter=sports">Sports</a>
+          <a href="drops.html?filter=luxury-ev">Luxury EV</a>
+          <a href="drops.html?filter=grand-tourer">Grand Tourers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Coverage</h4>
+          <a href="news.html">All News</a>
+          <a href="garage.html">My Garage</a>
+          <a href="about.html">About APEX/DROP</a>
+        </div>
+        <div class="footer-col">
+          <h4>Stay current</h4>
+          <p class="text-dim" style="max-width:32ch; font-size:14px;">One weekly email. Every confirmed drop, no spec-sheet noise.</p>
+          <a href="index.html#newsletter">Sign up for Drop Alerts →</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>APEX/DROP — a UX research course project, MSE543</span>
+        <span>Built for research purposes. Not a commercial product.</span>
+      </div>
+    </div>
+  </footer>
+<script src="js/main.js"></script>
+
+</body>
+</html>
